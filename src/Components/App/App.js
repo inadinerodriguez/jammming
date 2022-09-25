@@ -1,8 +1,15 @@
 import React from 'react';
 import '../App/App.css';
+import Playlist from '../Playlist/Playlist';
 import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state.searchResults = ["name", "artist", "album", "id"];
+  }
 
   render(){
     return (
@@ -11,8 +18,8 @@ class App extends React.Component {
         <div className="App">
         <SearchBar />
         <div className="App-playlist">
-        {/* <!-- Add a SearchResults component --> */}
-          {/* <!-- Add a Playlist component --> */} 
+          <SearchResults searchResults={this.state.searchResults} />
+          <Playlist />
         </div>
         </div>
       </div>
